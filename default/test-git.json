@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1769496906909,
+    "description" : "This is a test",
+    "identifier" : "test-git",
+    "lastModifiedTimestamp" : 1769496906909,
+    "name" : "test-git",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
