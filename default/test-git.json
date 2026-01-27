@@ -17,36 +17,6 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "14ff8966-df7d-36af-ba72-73dae5fe393b",
-        "name" : "PutMongo",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "197e6265-8082-3f52-8e3f-ab6aa99ad14d",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ "org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer" ],
-      "selectedRelationships" : [ "Original" ],
-      "source" : {
-        "comments" : "Try XD",
-        "groupId" : "flow-contents-group",
-        "id" : "3bb46276-effd-3863-ffff-fffface73bf2",
-        "name" : "Get Miami Data",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 2
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
         "comments" : "Try XD",
         "groupId" : "flow-contents-group",
         "id" : "5720489e-9df4-35e1-ffff-ffff8f29f115",
@@ -55,7 +25,7 @@
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "803f6dcf-95c4-3162-8507-08df05866a69",
+      "identifier" : "7fce41d8-1819-32f2-ba27-d51f000197d2",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -93,117 +63,7 @@
     },
     "processGroups" : [ ],
     "processors" : [ {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-mongodb-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.6.0-stackable25.11.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "14ff8966-df7d-36af-ba72-73dae5fe393b",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "PutMongo",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : 136.0,
-        "y" : -488.0
-      },
-      "properties" : {
-        "Upsert" : "false",
-        "Update Method" : "one",
-        "Mode" : "insert",
-        "put-mongo-update-mode" : "doc",
-        "Character Set" : "UTF-8"
-      },
-      "propertyDescriptors" : {
-        "mongo-client-service" : {
-          "displayName" : "Client Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "mongo-client-service",
-          "sensitive" : false
-        },
-        "Upsert" : {
-          "displayName" : "Upsert",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Upsert",
-          "sensitive" : false
-        },
-        "Update Query Key" : {
-          "displayName" : "Update Query Key",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Update Query Key",
-          "sensitive" : false
-        },
-        "Update Method" : {
-          "displayName" : "Update Method",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Update Method",
-          "sensitive" : false
-        },
-        "Mode" : {
-          "displayName" : "Mode",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Mode",
-          "sensitive" : false
-        },
-        "Mongo Collection Name" : {
-          "displayName" : "Mongo Collection Name",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Mongo Collection Name",
-          "sensitive" : false
-        },
-        "putmongo-update-query" : {
-          "displayName" : "Update Query",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "putmongo-update-query",
-          "sensitive" : false
-        },
-        "put-mongo-update-mode" : {
-          "displayName" : "Update Mode",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "put-mongo-update-mode",
-          "sensitive" : false
-        },
-        "Mongo Database Name" : {
-          "displayName" : "Mongo Database Name",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Mongo Database Name",
-          "sensitive" : false
-        },
-        "Character Set" : {
-          "displayName" : "Character Set",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Character Set",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.mongodb.PutMongo",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ "Failure", "No Retry", "Retry" ],
+      "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Retry" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "INFO",
       "bundle" : {
@@ -221,8 +81,8 @@
       "name" : "Get Miami Data",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -424.0,
-        "y" : -224.0
+        "x" : -112.0,
+        "y" : -656.0
       },
       "properties" : {
         "Request Content-Encoding" : "DISABLED",
@@ -506,7 +366,7 @@
           "sensitive" : false
         }
       },
-      "retriedRelationships" : [ ],
+      "retriedRelationships" : [ "Response" ],
       "retryCount" : 10,
       "runDurationMillis" : 0,
       "scheduledState" : "ENABLED",
@@ -534,8 +394,8 @@
       "name" : "Get Miami Data",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 288.0,
-        "y" : -272.0
+        "x" : 336.0,
+        "y" : -368.0
       },
       "properties" : {
         "Request Content-Encoding" : "DISABLED",
@@ -840,6 +700,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "test-git",
-    "timestamp" : 1769506807248
+    "timestamp" : 1769507318757
   }
 }
