@@ -87,9 +87,9 @@
       "properties" : {
         "Destination" : "flowfile-content",
         "Max String Length" : "20 MB",
-        "Return Type" : "scalar",
+        "Return Type" : "json",
         "Null Value Representation" : "empty string",
-        "JsonPaths" : "$.name",
+        "JsonPaths" : "$.phoneNumbers.*.number",
         "Path Not Found Behavior" : "ignore"
       },
       "propertyDescriptors" : {
@@ -171,7 +171,7 @@
         "character-set" : "UTF-8",
         "File Size" : "2B",
         "mime-type" : "application/json",
-        "generate-ff-custom-text" : "{\"name\":\"Jack\",\"age\":11,\"pet\":{\"john\":\"cat\"}}",
+        "generate-ff-custom-text" : "{\n  \"firstName\": \"John\",\n  \"lastName\" : \"doe\",\n  \"age\"      : 26,\n  \"address\"  : {\n    \"streetAddress\": \"naist street\",\n    \"city\"         : \"Nara\",\n    \"postalCode\"   : \"630-0192\"\n  },\n  \"phoneNumbers\": [\n    {\n      \"type\"  : \"iPhone\",\n      \"number\": \"0123-4567-8888\"\n    },\n    {\n      \"type\"  : \"home\",\n      \"number\": \"0123-4567-8910\"\n    }\n  ]\n}\n",
         "Batch Size" : "1",
         "Unique FlowFiles" : "false",
         "Data Format" : "Text"
@@ -248,6 +248,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "test-git",
-    "timestamp" : 1769566976387
+    "timestamp" : 1769572237142
   }
 }
